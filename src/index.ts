@@ -1,1 +1,1 @@
-export * from './functions/index.ts';
+export * as F from './functions';
