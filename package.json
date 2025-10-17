@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "entry":"src/index.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsup",
+    "build": "tsup ./src",
     "preview": "vite preview",
     "spell-check": "cspell .",
     "type-check": "tsc --noEmit",
