@@ -1,21 +1,22 @@
-import { expect, test } from "vitest";
+import { describe, expect, it } from "vitest";
 import { purge } from "./purge";
 
-test("array purge", async () => {
-  const arr = [false, 1, 2, "", "M", null, undefined];
+describe("purge", () => {
+  it("remove falsy values", () => {
+    const arr = [false, 1, 2, "", "M", null, undefined];
 
-  const purgedArr = purge(arr);
+    const purgedArr = purge(arr);
 
-  purgedArr.forEach(element => {
-    expect(Boolean(element)).toBeTruthy();
+    purgedArr.forEach(element => {
+      expect(Boolean(element)).toBeTruthy();
+    });
   });
-});
 
+  it("with empty", () => {
+    const arr: any[] = [];
 
-test("array purge with empty", async () => {
-  const arr : any[] = [];
+    const purgedArr = purge(arr);
 
-  const purgedArr = purge(arr);
-
-  expect(purgedArr).toEqual([]);
+    expect(purgedArr).toEqual([]);
+  });
 });
